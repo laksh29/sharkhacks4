@@ -38,8 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_maps_flutter_web: ^0.4.0+3
   google_maps_flutter: ^2.2.1
-
-
+  carousel_slider: ^4.1.1
+  smooth_page_indicator:
 
 
 dev_dependencies:
@@ -89,6 +89,12 @@ flutter:
     - family: Aesthetic
       fonts:
         - asset: assets/Aesthetic Violet.otf
+    - family: poppins
+      fonts:
+        - asset: assets/Poppins-Regular.ttf
+          weight: 100
+        - asset: assets/Poppins-Medium.ttf
+          weight: 500
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

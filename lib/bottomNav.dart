@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sharkhacks4/facts.dart';
 import 'package:sharkhacks4/map.dart';
 
 class BottomNav extends StatefulWidget {
@@ -11,11 +12,7 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int count = 0;
-  final screens = [
-    const MapPage(),
-    const Text("Facts and Jokes"),
-    const Text("Game")
-  ];
+  final screens = [const MapPage(), const Facts(), const Text("Game")];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

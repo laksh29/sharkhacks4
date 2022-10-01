@@ -9,25 +9,11 @@ class MapPage extends StatefulWidget {
   State<MapPage> createState() => _MapPageState();
 }
 
-class _MapPageState extends State<MapPage> with SingleTickerProviderStateMixin {
+class _MapPageState extends State<MapPage> {
   static const _initialCameraPosition =
       CameraPosition(target: LatLng(20.5937, 78.9629), zoom: 4);
-  late GoogleMapController _googleMapController;
-  // late Marker _origin;
-  // late Marker _destination;
 
-  @override
-  void dispose() {
-    _googleMapController.dispose();
-    super.dispose();
-  }
-
-// late PermissionStatus _status;
-  @override
-  void initState() {
-    super.initState();
-  }
-
+  late GoogleMapController googleMapController;
   @override
   Widget build(BuildContext context) {
     final Set<Marker> markers = new Set();
@@ -43,11 +29,9 @@ class _MapPageState extends State<MapPage> with SingleTickerProviderStateMixin {
         GoogleMap(
           initialCameraPosition: _initialCameraPosition,
           myLocationEnabled: true,
-          myLocationButtonEnabled: false,
-          zoomControlsEnabled: false,
-          onMapCreated: (controller) => _googleMapController = controller,
+          myLocationButtonEnabled: true,
+          onMapCreated: (controller) => googleMapController = controller,
           markers: markers,
-          // onLongPress: _addMarker,
         ),
         Positioned(
             top: 20,
@@ -64,10 +48,10 @@ class _MapPageState extends State<MapPage> with SingleTickerProviderStateMixin {
               ),
             )),
         Positioned(
-          right: 20,
+          right: 60,
           bottom: 60,
           child: FloatingActionButton(
-            onPressed: () => _googleMapController.animateCamera(
+            onPressed: () => googleMapController.animateCamera(
               CameraUpdate.newCameraPosition(_initialCameraPosition),
             ),
             backgroundColor: Theme.of(context).primaryColor,

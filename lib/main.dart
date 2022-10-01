@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sharkhacks4/bottomNav.dart';
 import 'package:sharkhacks4/map.dart';
+import 'package:sharkhacks4/startPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue, primaryColor: Colors.white),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => const BottomNav(),
+        '/': (context) => const StartPage(),
+        '/bottomnav': (context) => const BottomNav(),
         '/map': (context) => const MapPage(),
       },
     );

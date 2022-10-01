@@ -35,7 +35,7 @@ class _FactsState extends State<Facts> {
               aspectRatio: 2 / 1,
               enlargeCenterPage: true,
               autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 6),
+              autoPlayInterval: const Duration(seconds: 3),
               enableInfiniteScroll: false,
             ),
           ),
@@ -54,7 +54,7 @@ class _FactsState extends State<Facts> {
               aspectRatio: 2 / 1,
               enlargeCenterPage: true,
               autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 6),
+              autoPlayInterval: const Duration(seconds: 3),
               enableInfiniteScroll: false,
             ),
             itemBuilder: (context, index, realIndex) {

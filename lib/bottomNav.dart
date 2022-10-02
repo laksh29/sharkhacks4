@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sharkhacks4/facts.dart';
 import 'package:sharkhacks4/game.dart';
 import 'package:sharkhacks4/map.dart';
+import 'package:sharkhacks4/types.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -13,7 +14,12 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int count = 0;
-  final screens = [const MapPage(), const Facts(), const Game()];
+  final screens = [
+    const MapPage(),
+    const SharkTypes(),
+    const Facts(),
+    const Game()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +33,8 @@ class _BottomNavState extends State<BottomNav> {
         onTap: (index) => setState(() => count = index),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.map_rounded), label: "Map"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.list_alt_rounded), label: "Shark Types"),
           BottomNavigationBarItem(
               icon: Icon(Icons.newspaper_rounded), label: "Facts and Jokes"),
           BottomNavigationBarItem(

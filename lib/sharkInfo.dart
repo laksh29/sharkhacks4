@@ -10,10 +10,30 @@ Marker buildMarker(name, lat, long, title) {
 }
 
 final List sharkInfo = [
-  {"name": "Shark 1", "lat": 22.900000, "long": 88.389999, "title": "shark 1"},
-  {"name": "Shark 2", "lat": 27.40364, "long": 83.031971, "title": "shark 2"},
-  {"name": "Shark 3", "lat": 21.012094, "long": 84.040789, "title": "shark 3"},
-  {"name": "Shark 4", "lat": 26.474667, "long": 92.534751, "title": "shark 4"},
+  {
+    "name": "HAMMERHEAD SHARK",
+    "lat": 22.900000,
+    "long": 88.389999,
+    "title": "HAMMERHEAD SHARK"
+  },
+  {
+    "name": "BULL SHARK",
+    "lat": 27.40364,
+    "long": 83.031971,
+    "title": "BULL SHARK"
+  },
+  {
+    "name": "ANGEL SHARK",
+    "lat": 21.012094,
+    "long": 84.040789,
+    "title": "ANGEL SHARK"
+  },
+  {
+    "name": "SPINY DOGFISH SHARK",
+    "lat": 26.474667,
+    "long": 92.534751,
+    "title": "SPINY DOGFISH SHARK"
+  },
 
   {
     "name": "Donsol Whale Shark",
@@ -219,12 +239,12 @@ final List types = [
         "about 12 feet long. sleek, tapered body. among the fastest swimming sharks and can even leap out of the water. diet consists mostly of squid, but it will eat almost anything. considered dangerous - have attacked people."
   },
   {
-    "type": "BLACKTIP SHARK (Carcharhinus limbatus)",
+    "type": "BLACKTIP SHARK",
     "about":
         "Blacktip Sharks are different than Blacktip Reef Sharks (this confused me for quite some time)! They are usually about 5 feet long although the longest on record was about 9 feet long. during breeding season every February and March, around 10,000 congregate along the Florida coastline.  It's like spring-break vacation for sharks!"
   },
   {
-    "type": "BLACKTIP REEF SHARK (Carcharhinus melanopterus)",
+    "type": "BLACKTIP REEF SHARK",
     "about":
         "does well in captivity so is often found in aquariums (which is why we have so many photos of them). grey with a black tip on its fins and white streak on its side."
   },

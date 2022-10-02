@@ -4,6 +4,7 @@ import 'package:sharkhacks4/facts.dart';
 import 'package:sharkhacks4/game.dart';
 import 'package:sharkhacks4/map.dart';
 import 'package:sharkhacks4/startPage.dart';
+import 'package:sharkhacks4/types.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const StartPage(),
         '/bottomnav': (context) => const BottomNav(),
         '/map': (context) => const MapPage(),
+        '/sharktypes': (context) => const SharkTypes(),
         'facts': (context) => const Facts(),
         '/game': (context) => const Game(),
       },

@@ -154,14 +154,78 @@ class _GameState extends State<Game> {
                             onPressed: () {
                               // Validate returns true if the form is valid, or false otherwise.
                               if (_formKey.currentState!.validate()) {
-                                buildTypeShark(context);
+                                setState(() {
+                                  showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                          AlertDialog(
+                                            title: const Center(
+                                              child: Text(
+                                                "You are a: ",
+                                                style: TextStyle(
+                                                    fontFamily: "poppins",
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20),
+                                              ),
+                                            ),
+                                            actions: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 10,
+                                                    right: 10,
+                                                    bottom: 20),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      types[0]["type"],
+                                                      style: const TextStyle(
+                                                          fontFamily: "poppins",
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 25),
+                                                    ),
+                                                    Text(
+                                                      types[0]["about"],
+                                                      style: const TextStyle(
+                                                        fontFamily: "poppins",
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.justify,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ));
+                                });
                                 // // If the form is valid, display a snackbar. In the real world,
                                 // // you'd often call a server or save the information in a database.
                                 // ScaffoldMessenger.of(context).showSnackBar(
                                 //   const SnackBar(content: Text('Processing Data')),
                                 // );
                               } else {
-                                buildError(context);
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        const AlertDialog(
+                                          title: Center(
+                                            child: Text(
+                                              "! ERROR !",
+                                              style: TextStyle(
+                                                  fontFamily: "poppins",
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 25),
+                                            ),
+                                          ),
+                                          content: Text(
+                                            "One or more input texts are empty",
+                                            style: TextStyle(
+                                                fontFamily: "poppins"),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ));
                               }
                             },
                             // if (controller1 == null) ;
@@ -181,65 +245,65 @@ class _GameState extends State<Game> {
     );
   }
 
-  Future<dynamic> buildError(BuildContext context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) => const AlertDialog(
-              title: Center(
-                child: Text(
-                  "! ERROR !",
-                  style: TextStyle(
-                      fontFamily: "poppins",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25),
-                ),
-              ),
-              content: Text(
-                "One or more input texts are empty",
-                style: TextStyle(fontFamily: "poppins"),
-                textAlign: TextAlign.center,
-              ),
-            ));
-  }
+  // Future<dynamic> buildError(BuildContext context) {
+  //   return showDialog(
+  //       context: context,
+  //       builder: (BuildContext context) => const AlertDialog(
+  //             title: Center(
+  //               child: Text(
+  //                 "! ERROR !",
+  //                 style: TextStyle(
+  //                     fontFamily: "poppins",
+  //                     fontWeight: FontWeight.bold,
+  //                     fontSize: 25),
+  //               ),
+  //             ),
+  //             content: Text(
+  //               "One or more input texts are empty",
+  //               style: TextStyle(fontFamily: "poppins"),
+  //               textAlign: TextAlign.center,
+  //             ),
+  //           ));
+  // }
 
-  Future<dynamic> buildTypeShark(BuildContext context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) => AlertDialog(
-              title: const Center(
-                child: Text(
-                  "You are a: ",
-                  style: TextStyle(
-                      fontFamily: "poppins",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ),
-              actions: [
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 10, right: 10, bottom: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        types[0]["type"],
-                        style: const TextStyle(
-                            fontFamily: "poppins",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
-                      ),
-                      Text(
-                        types[0]["about"],
-                        style: const TextStyle(
-                          fontFamily: "poppins",
-                        ),
-                        textAlign: TextAlign.justify,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ));
-  }
+  // Future<dynamic> buildTypeShark(BuildContext context) {
+  //   return showDialog(
+  //       context: context,
+  //       builder: (BuildContext context) => AlertDialog(
+  //             title: const Center(
+  //               child: Text(
+  //                 "You are a: ",
+  //                 style: TextStyle(
+  //                     fontFamily: "poppins",
+  //                     fontWeight: FontWeight.bold,
+  //                     fontSize: 20),
+  //               ),
+  //             ),
+  //             actions: [
+  //               Padding(
+  //                 padding:
+  //                     const EdgeInsets.only(left: 10, right: 10, bottom: 20),
+  //                 child: Column(
+  //                   crossAxisAlignment: CrossAxisAlignment.center,
+  //                   children: [
+  //                     Text(
+  //                       types[0]["type"],
+  //                       style: const TextStyle(
+  //                           fontFamily: "poppins",
+  //                           fontWeight: FontWeight.bold,
+  //                           fontSize: 25),
+  //                     ),
+  //                     Text(
+  //                       types[0]["about"],
+  //                       style: const TextStyle(
+  //                         fontFamily: "poppins",
+  //                       ),
+  //                       textAlign: TextAlign.justify,
+  //                     ),
+  //                   ],
+  //                 ),
+  //               ),
+  //             ],
+  //           ));
+  // }
 }

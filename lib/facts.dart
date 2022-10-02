@@ -107,6 +107,7 @@ class _FactsState extends State<Facts> {
     );
   }
 
+// facts
   Widget buildFacts(int index) {
     return GestureDetector(
       onTap: () {
@@ -114,23 +115,36 @@ class _FactsState extends State<Facts> {
             context: context, builder: (context) => buildAlert(context, index));
       },
       child: Container(
+          height: 75,
           decoration: BoxDecoration(
               color: const Color(0xff9CDCCA),
               borderRadius: BorderRadius.circular(20),
               border: Border.all(width: 2, color: const Color(0xff0F2E4C))),
           margin: const EdgeInsets.all(8),
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Text(
-            facts[index]["Header"]!,
-            style: const TextStyle(
-                fontSize: 35,
-                color: Color(0xff1C529E),
-                fontFamily: "aesthetic"),
-            textAlign: TextAlign.start,
-          )),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Stack(children: [
+            Text(
+              facts[index]["Header"]!,
+              style: const TextStyle(
+                  fontSize: 32,
+                  color: Color(0xff1C529E),
+                  fontFamily: "aesthetic"),
+              textAlign: TextAlign.start,
+            ),
+            const Positioned(
+              right: 90,
+              bottom: 5,
+              child: Text(
+                "Tap to know more",
+                style: TextStyle(fontFamily: "poppins", fontSize: 10),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ])),
     );
   }
 
+// Alertbox
   AlertDialog buildAlert(BuildContext context, int index) {
     return AlertDialog(
       title: Text(
@@ -151,19 +165,67 @@ class _FactsState extends State<Facts> {
     );
   }
 
+// jokes
   Widget buildJokes(int index) {
-    return Container(
-        decoration: BoxDecoration(
-            color: const Color(0xff9CDCCA),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(width: 2, color: const Color(0xff0F2E4C))),
-        margin: const EdgeInsets.all(8),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        child: Text(
-          jokes[index]["joke"]!,
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+            context: context,
+            builder: (context) => buildJokeAlert(context, index));
+      },
+      child: Container(
+          height: 75,
+          decoration: BoxDecoration(
+              color: const Color(0xff9CDCCA),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(width: 2, color: const Color(0xff0F2E4C))),
+          margin: const EdgeInsets.all(8),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Stack(children: [
+            Text(
+              jokes[index]["joke"]!,
+              style: const TextStyle(
+                  fontSize: 25,
+                  color: Color(0xff1C529E),
+                  fontFamily: "aesthetic"),
+              textAlign: TextAlign.start,
+            ),
+            const Positioned(
+              right: 90,
+              bottom: 5,
+              child: Text(
+                "Tap to know more",
+                style: TextStyle(fontFamily: "poppins", fontSize: 10),
+                textAlign: TextAlign.center,
+              ),
+            )
+          ])),
+    );
+  }
+
+// Alertbox
+  AlertDialog buildJokeAlert(BuildContext context, int index) {
+    return AlertDialog(
+      title: Text(
+        jokes[index]["joke"]!,
+        style:
+            const TextStyle(fontFamily: "poppins", fontWeight: FontWeight.w500),
+      ),
+      content: Text(jokes[index]["ans"]!,
           style: const TextStyle(
-              fontSize: 25, color: Color(0xff1C529E), fontFamily: "aesthetic"),
-          textAlign: TextAlign.start,
-        ));
+              fontFamily: "poppins", fontWeight: FontWeight.w100)),
+      actions: [
+        TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("LAME 🙄",
+                style: TextStyle(
+                    fontFamily: "poppins", fontWeight: FontWeight.w100))),
+        TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("Good One! 😂",
+                style: TextStyle(
+                    fontFamily: "poppins", fontWeight: FontWeight.w100)))
+      ],
+    );
   }
 }

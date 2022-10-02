@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sharkhacks4/bottomNav.dart';
+import 'package:sharkhacks4/facts.dart';
+import 'package:sharkhacks4/game.dart';
 import 'package:sharkhacks4/map.dart';
 import 'package:sharkhacks4/startPage.dart';
 
@@ -24,6 +23,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const StartPage(),
         '/bottomnav': (context) => const BottomNav(),
         '/map': (context) => const MapPage(),
+        'facts': (context) => const Facts(),
+        '/game': (context) => const Game(),
       },
     );
   }

@@ -1,16 +1,7 @@
-# sharkhacks4
+# Sharking Sharks
 
-A new Flutter project.
+This my submission to SharkHacks 4 which is a MLH hostel hackathon.
+I have developed this project using Flutter as frontend tool and Google Maps API.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Download the APK here:**
+[APK v1](https://drive.google.com/file/d/123wv-lZVy5_zgQbJboFoTyeFGsDlKo1q/view?usp=sharing)
